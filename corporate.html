@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Crude Quality Inc.</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900|Roboto:300,400,700|Vesper+Libre:400,500,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/barba.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="css/flexboxgrid.min.css" />
+
+    <link rel="stylesheet" href="css/home.css" />
+    <script id="post-vert" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+      #include <packing>
+      varying vec2 vUv;
+      uniform sampler2D tDiffuse;
+      uniform sampler2D tDepth;
+      uniform float cameraNear;
+      uniform float cameraFar;
+      float readDepth (sampler2D depthSampler, vec2 coord) {
+        float fragCoordZ = texture2D(depthSampler, coord).x;
+        float viewZ = perspectiveDepthToViewZ( fragCoordZ, cameraNear, cameraFar );
+        return viewZToOrthographicDepth( viewZ, cameraNear, cameraFar );
+      }
+      void main() {
+        vec3 diffuse = texture2D(tDiffuse, vUv).rgb;
+        float depth = readDepth(tDepth, vUv);
+        gl_FragColor.rgb = vec3(depth);
+        gl_FragColor.a = 1.0;
+      }
+    </script>
+
+  </head>
+  <body>
+    
+    <div class="header">
+      <canvas></canvas>
+    </div>
+    <a href="index.html"><img height="50px" style="top: 20px; left: 20px;" src="assets/logo_white.png"></a>
+    <div id="nav-icon4">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div id="barba-wrapper">
+      <div class="barba-container">
+        <div class="menu" style="display: none">
+          <div class="menu-item" style="display: none">
+           <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
+          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
+          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
+          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
+          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
+          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
+          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
+          </div>
+        </div>
+        <div class="container padded-top-2x">
+          <h1 class="white-font">About Us</h1>
+          <p class="white-font">
+          Crude Quality Inc. is a private company incorporated in the Province of Alberta, Canada in 1998. CQI was established in recognition of existing and pending demands for high quality, "real time" crude quality information by the production, transportation and refining segments of the oil industry. The principals of CQI have spent the past ten years in the petroleum transportation and refining industries troubleshooting crude oil contamination issues throughout North America and overseas.
+          <br><br>
+          Crude Quality Inc. has formed a number of alliances with leaders in hydrocarbon analysis and information processing technology. CQI enjoys special status through all of these alliances, ensuring the most cost effective solutions for industry needs. Crude Quality Inc. is capable of delivering everything from routine analysis on hydrocarbon streams (Certificate of Analysis) to simulation modeling of pipeline transportation systems to detailed investigations into the ramifications of abnormal crude quality behaviour through complex refining scenarios.
+          <br><br>
+          Along with full access to the battery of ASTM testing procedures at our disposal, Crude Quality Inc. has considerable experience designing experiments and analytical procedures to meet specific needs of the petroleum industry. We have access to some of the most sophisticated and sensitive equipment in the world, along with the most highly trained and qualified individuals available.
+          <br><br>
+          Crude Quality Inc. is an active member in a number of associations and societies in Canada and the United States. Crude Quality Inc. has presented at technical and business meetings ranging from private board meetings to annual general meetings of hundreds.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    <div id="info" class="container-fluid">
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+      </div>
+      <br/>
+      <div id="error" style="display: none;">
+      Your browser does not support <strong>WEBGL_depth_texture</strong>.<br/><br/>
+      This demo will not work.
+      </div>
+    </div>
+
+		<script src="js/three.min.js"></script>
+    <script src="js/shaders/SSAOShader.js"></script>
+    <script src="js/controls/OrbitControls.js"></script>
+   <script type="text/javascript">
+    $(document).ready(function(){
+      $('#nav-icon4').click(function(){
+        $(this).toggleClass('open');
+        $('.menu').fadeToggle('fast', function() {
+          $('.menu-item').fadeToggle('slow');
+        });
+      });
+      $('.navg').click(function() {
+        //$('#nav-icon4').toggleClass('open');
+      })
+    });
+    </script>
+  <script>
+     $('.slick').not('.slick-initialized').slick({
+      arrows: false,
+      dots: true,
+      appendDots: $('.arrows')
+     });
+    </script>
+    <script type="text/javascript">
+    Barba.Pjax.start();
+    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
+       $('.slick').not('.slick-initialized').slick({
+        arrows: false,
+        dots: true,
+        appendDots: $('.arrows')
+       });
+       $('#nav-icon4').removeClass('open');
+      });
+    var BaseTransition = Barba.BaseTransition;
+    var FadeTransition = Barba.BaseTransition.extend({
+      start: function() {
+        /**
+         * This function is automatically called as soon the Transition starts
+         * this.newContainerLoading is a Promise for the loading of the new container
+         * (Barba.js also comes with an handy Promise polyfill!)
+         */
+
+        // As soon the loading is finished and the old page is faded out, let's fade the new page
+        Promise
+          .all([this.newContainerLoading, this.fadeOut()])
+          .then(this.fadeIn.bind(this));
+      },
+
+      fadeOut: function() {
+        /**
+         * this.oldContainer is the HTMLElement of the old Container
+         */
+
+        return $(this.oldContainer).animate({ opacity: 0 }).promise();
+      },
+
+      fadeIn: function() {
+        /**
+         * this.newContainer is the HTMLElement of the new Container
+         * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+         * Please note, newContainer is available just after newContainerLoading is resolved!
+         */
+
+        var _this = this;
+        var $el = $(this.newContainer);
+
+        $(this.oldContainer).hide();
+
+        $el.css({
+          visibility : 'visible',
+          opacity : 0
+        });
+
+        $el.animate({ opacity: 1 }, 400, function() {
+          /**
+           * Do not forget to call .done() as soon your transition is finished!
+           * .done() will automatically remove from the DOM the old Container
+           */
+
+          _this.done();
+        });
+      }
+    });
+
+    /**
+     * Next step, you have to tell Barba to use the new Transition
+     */
+
+    Barba.Pjax.getTransition = function() {
+      /**
+       * Here you can use your own logic!
+       * For example you can use different Transition based on the current page or link...
+       */
+
+      return FadeTransition;
+    };
+    </script>
+     <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
+    <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="js/three-cqi.js"></script>
+  </body>
+</html>

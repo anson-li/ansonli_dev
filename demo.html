@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Crude Quality Inc.</title>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900|Roboto:300,400,700|Vesper+Libre:400,500,700,900" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="js/barba.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/home.css" />
+    <script id="post-vert" type="x-shader/x-vertex">
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    </script>
+    <script id="post-frag" type="x-shader/x-fragment">
+      #include <packing>
+      varying vec2 vUv;
+      uniform sampler2D tDiffuse;
+      uniform sampler2D tDepth;
+      uniform float cameraNear;
+      uniform float cameraFar;
+      float readDepth (sampler2D depthSampler, vec2 coord) {
+        float fragCoordZ = texture2D(depthSampler, coord).x;
+        float viewZ = perspectiveDepthToViewZ( fragCoordZ, cameraNear, cameraFar );
+        return viewZToOrthographicDepth( viewZ, cameraNear, cameraFar );
+      }
+      void main() {
+        vec3 diffuse = texture2D(tDiffuse, vUv).rgb;
+        float depth = readDepth(tDepth, vUv);
+        gl_FragColor.rgb = vec3(depth);
+        gl_FragColor.a = 1.0;
+      }
+    </script>
+  <link rel="stylesheet" href="css/flexboxgrid.min.css" />
+  <style>
+  .flexcontainer {
+     display: -webkit-flex;
+     display: flex;
+     -webkit-flex-direction: row;
+     flex-direction: row;
+     -webkit-align-items: center;
+     align-items: center;
+     -webkit-justify-content: center;
+     justify-content: center;
+  }
+  </style>
+  <style>
+    iframe {
+        z-index : -9999;
+        position: absolute;
+        top : 0;
+        left    : 0;
+        width   : 100%;
+        height  : 100%;
+        margin  : 0;
+        padding : 0;
+    }
+  </style>
+  </head>
+  <body>
+    <div class="header">
+    	<canvas></canvas>
+    </div>
+    <div id="info" class="container-fluid">
+      <br/>
+      <div id="error" style="display: none;">
+      Your browser does not support <strong>WEBGL technology.</strong>.<br/><br/>
+      Please try again with a modern browser.
+      </div>
+    </div>
+
+		<script src="js/three.min.js"></script>
+    <script src="js/shaders/SSAOShader.js"></script>
+    <script src="js/controls/OrbitControls.js"></script>
+    <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
+    <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
+    <script src="js/three-cqi.js"></script>
+  </body>
+</html>
