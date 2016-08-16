@@ -1,13 +1,23 @@
+  @font-face{
+    font-family: "Calibre";
+    src: url('../assets/fonts/calibre-light.ttf');
+  }
+
+  @font-face{
+    font-family: "Tiempo";
+    src: url('../assets/fonts/tiempo.ttf');
+  }
 
   body {
-    color: #333;
-    font-family: 'Roboto', sans-serif;
+    color: #eee;
+    font-family: "Calibre";
     font-weight: 300;
-    font-size:15px;
+    font-size: 50px;
     text-align: left;
-    background-color: #111;
+    letter-spacing: 1.5px;
+    background-color: #efefef;
     margin:0;
-    color: #333;
+    color: #eee;
   }
 
   :focus {
@@ -22,8 +32,6 @@
     text-align: left;
   }
 
-
-
   input:focus { 
       border: none;
   }
@@ -31,35 +39,44 @@
     position: fixed;
   }
   .white-font {
-    color: #FFF;
+    color: #333;
   }
   .blue-font {
     color: #99e6ff;
   }
   h1 {
-    font-family: 'Vesper Libre', serif;
+    font-family: 'Tiempo', serif;
     font-size: 5.3em;
-    font-weight: 700;
   }
 
   h2 {
-    font-family: 'Vesper Libre', serif;
+    font-family: 'Tiempo', serif;
     font-size: 2em;
-    font-weight: 400;
-
   }
+
   h3 {
-    font-family: 'Vesper Libre', serif;
+    font-family: 'Tiempo', serif;
     font-size: 3em;
-    font-weight: 700;
-
   }
+
+  .serif {
+    font-family: 'Tiempo', serif;
+    letter-spacing: 2px;
+  }
+
   p {
     text-align: left;
-    font-size: 1em;
+    font-size: 1.5em;
   }
 
- 
+  a {
+    color: #333;
+  }
+
+  h5 {
+    text-align: center;
+    font-size: 1.8em;
+  }
 
   canvas {
     z-index: -1;
@@ -214,6 +231,36 @@
     transform: rotate(-45deg);
     top: 21px;
     left: 0px;
+  }
+
+  .bottom-align {
+    position: fixed;
+    bottom: 0;
+    min-height:100%;
+    height:auto; 
+  }
+
+  .highlight {
+    background: #ffc98d; /* Old browsers */
+    background: -moz-linear-gradient(45deg, #ffc98d 0%, #ffd7ab 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(45deg, #ffc98d 0%,#ffd7ab 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(45deg, #ffc98d 0%,#ffd7ab 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc98d', endColorstr='#ffd7ab',GradientType=1 );
+    margin: 0px 0px;
+    line-height: 0.5;
+    border-radius: 5px;
+    display:inline-block;
+  }
+
+  .fixed-bottom {
+    position: fixed;
+    border-top: 0.5px solid #FFB158;
+    background: rgba(240, 240, 240, 0.3);
+    padding-bottom: 15px;
+    margin-bottom: 0px..45;
+    bottom: 40px;
+    left: 50px;
+    width: 90%;
   }
 
   ul {

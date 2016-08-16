@@ -20,8 +20,8 @@
         container = document.createElement('div');
         document.body.appendChild(container);
 
-        camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
-        camera.position.z = 150;
+        camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
+        camera.position.z = 750;
 
         scene = new THREE.Scene();
 
@@ -35,11 +35,11 @@
         var PI2 = Math.PI * 2;
         var material = new THREE.SpriteCanvasMaterial( {
 
-          color: 0x99e6ff,
+          color: 0xFFD7AB,
           program: function ( context ) {
 
             context.beginPath();
-            context.arc( 0, 0, 0.5, 0, PI2, true );
+            context.arc( 0, 0, 1, 0, PI2, true );
             context.fill();
 
           }
@@ -51,11 +51,11 @@
         for ( var i = 0; i < 100; i ++ ) {
 
           particle = new THREE.Sprite( material );
-          particle.position.x = Math.random() * 2 - 1;
+          particle.position.x = Math.random() * 3 - 1;
           particle.position.y = Math.random() * 2 - 1;
-          particle.position.z = Math.random() * 2 - 1;
+          particle.position.z = Math.random() * 5 - 1;
           particle.position.normalize();
-          particle.position.multiplyScalar( Math.random() * 12 + 450 );
+          particle.position.multiplyScalar( Math.random() * 12 + 350 );
           particle.scale.x = particle.scale.y = Math.random() * 3;
           scene.add( particle );
 
@@ -65,7 +65,7 @@
 
         // lines
 
-        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x333333, opacity: 0.5 } ) );
+        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x6B6B6B, opacity: 0.3, linewidth: 0.5 } ) );
         scene.add( line );
 
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -122,8 +122,8 @@
           mouseY = event.touches[ 0 ].pageY - windowHalfY;
 
         } else {
-          mouseX += 0.005;
-          mouseY -= 0.005;
+          mouseX += 0.05;
+          mouseY -= 0.05;
         }
 
       }
@@ -140,8 +140,8 @@
 
       function render() {
 
-        camera.position.x += ( mouseX - camera.position.x ) * .0005;
-        camera.position.y += ( - mouseY + 200 - camera.position.y ) * .0005;
+        camera.position.x += ( mouseX - camera.position.x ) * .015;
+        camera.position.y += ( - mouseY + 200 - camera.position.y ) * .015;
         camera.lookAt( scene.position ); 
 
         renderer.render( scene, camera );
