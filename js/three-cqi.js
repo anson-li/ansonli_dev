@@ -21,7 +21,7 @@
         document.body.appendChild(container);
 
         camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
-        camera.position.z = 750;
+        camera.position.z = 550;
 
         scene = new THREE.Scene();
 
