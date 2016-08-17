@@ -39,7 +39,7 @@
           program: function ( context ) {
 
             context.beginPath();
-            context.arc( 0, 0, 1, 0, PI2, true );
+            context.arc( 0, 0, 0.6, 0, PI2, true );
             context.fill();
 
           }
@@ -139,7 +139,6 @@
       }
 
       function render() {
-
         camera.position.x += ( mouseX - camera.position.x ) * .015;
         camera.position.y += ( - mouseY + 200 - camera.position.y ) * .015;
         camera.lookAt( scene.position ); 
