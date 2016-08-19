@@ -254,12 +254,10 @@
 
   .fixed-bottom {
     position: fixed;
-    border-top: 0.5px solid #FFB158;
-    background: rgba(240, 240, 240, 0.3);
-    padding-bottom: 15px;
+    padding-bottom: 50px;
     margin-bottom: 0px..45;
     bottom: 0px;
-    left: 50px;
+    left: 55px;
     width: 90%;
   }
 

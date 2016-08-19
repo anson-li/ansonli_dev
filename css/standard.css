@@ -1,6 +1,6 @@
 a:hover {
   text-decoration: underline;
-  text-decoration-color: #333;
+  text-decoration-line: 0.5px solid #3f3f3f;
   color: #333;
 }
 
@@ -24,7 +24,7 @@ a:hover {
     #bottom { bottom: 0; }
 
 .top-center {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .mid-center {
