@@ -182,7 +182,7 @@
   }
 
   #nav-icon4:hover span {
-    background: #99e6ff;
+    background: #ffc98d;
     width: 90%;
   }
 
@@ -258,7 +258,7 @@
     background: rgba(240, 240, 240, 0.3);
     padding-bottom: 15px;
     margin-bottom: 0px..45;
-    bottom: 40px;
+    bottom: 0px;
     left: 50px;
     width: 90%;
   }
