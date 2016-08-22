@@ -1,6 +1,6 @@
 a:hover {
-  text-decoration: underline;
-  text-decoration-line: 0.5px solid #3f3f3f;
+  text-decoration: none;
+  border-bottom: 0.5px solid #666;
   color: #333;
 }
 
