@@ -21,7 +21,7 @@
         document.body.appendChild(container);
 
         camera = new THREE.PerspectiveCamera( 315, window.innerWidth / window.innerHeight, 1, 10000 );
-        camera.position.z = 850;
+        camera.position.z = 650;
 
         scene = new THREE.Scene();
 
@@ -39,7 +39,7 @@
           program: function ( context ) {
 
             context.beginPath();
-            context.arc( 0, 0, 0.6, 0, PI2, true );
+            context.arc( 0, 0, 1.2, 0, PI2, true );
             context.fill();
 
           }
@@ -65,7 +65,7 @@
 
         // lines
 
-        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x6B6B6B, opacity: 0.3, linewidth: 0.5 } ) );
+        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 1, linewidth: 0.5 } ) );
         scene.add( line );
 
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );
@@ -108,7 +108,7 @@
           mouseX = event.touches[ 0 ].pageX - windowHalfX;
           mouseY = event.touches[ 0 ].pageY - windowHalfY;
 
-        }
+        } 
 
       }
 
@@ -133,14 +133,13 @@
       function animate() {
 
         requestAnimationFrame( animate );
-
         render();
 
       }
 
       function render() {
         camera.position.x += ( mouseX - camera.position.x ) * .015;
-        camera.position.y += ( - mouseY + 200 - camera.position.y ) * .015;
+        camera.position.y += ( - mouseY - camera.position.y ) * .015;
         camera.lookAt( scene.position ); 
 
         renderer.render( scene, camera );

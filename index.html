@@ -17,53 +17,44 @@
     <script src="js/Detector.js"></script>
     <script src="js/libs/stats.min.js"></script>
     <link rel="stylesheet" href="css/home.css" />
-    <link rel="stylesheet" href="css/standard.css" />
-    <!--<link rel="stylesheet" href="css/flexboxgrid.min.css" />-->
   </head>
   <body>
+
+  <div class="fixed-wrapper fixed-vert">
     <div id="left"></div>
     <div id="right"></div>
     <div id="top"></div>
     <div id="bottom"></div>
 
     <div class="col-md-12 top-center">
-      <h5><a class="strikethrough" href="corporate.html">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-      <a class="strikethrough"  href="services.html" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <h5><a class="strikethrough" href="resume.html">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="strikethrough"  href="work.html" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a class="strikethrough"  href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
     </div>
-
     <div class="header">
       <canvas></canvas>
     </div>
     <a href="index.html"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
-    <div id="nav-icon4">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
     <div id="barba-wrapper" style="height: 100%; width: 100%">
       <div class="barba-container" style="height: 100%; width: 100%">
-      <div class="menu" style="display: none">
-        <div class="menu-item" style="display: none">
-          <h2 id="to_home"><a class="white-font navg" href="index.html">Home</a></h2><br>
-          <h2 id="to_about"><a class="white-font navg" href="corporate.html">About Us</a></h2><br>
-          <h2 id="to_services"><a class="white-font navg" href="services.html">Services</a></h2><br>
-          <h2 id="to_projects"><a class="white-font navg" href="projects.html">Projects</a></h2><br>
-          <h2 id="to_committee"><a class="white-font navg" href="committee.html">Committees</a></h2><br>
-          <h2 id="to_links"><a class="white-font navg" href="links.html">Links</a></h2><br>
-          <h2 id="to_contact"><a class="white-font navg" href="contact.html">Contact Us</a></h2><br>
-        </div>
-      </div>
       <div class="flex-container container ">
         <br><br>
-        <div class="col-md-6 mid-center">
-        <p class="white-font item">
-        <span class="serif">Anson Li</span> is a <span class="highlight">software engineer</span><br>
+        <div class="col-md-12 left-top">
+        <img style="position: absolute; top: -150px; z-index: -2" src="assets/bg-index.png" />
+        <h1>
+        Anson Li is a <span class="highlight">software engineer</span><br>
         at the University of Alberta,<br>
-        currently working at Questionmark.</p>
+        currently working at Questionmark.</h1>
         <br>
         </div>
+      </div>
+      <div class="flex-container container">
+        <br><br>
+        <div class="col-md-12 fixed-bottom">
+        <p class="white-font item">
+        <span class="serif">Experiment #001</span>
         </p>
+        <br>
         </div>
       </div>
     </div>
@@ -74,6 +65,8 @@
       Please try again with a modern browser.
       </div>
     </div>
+    </div>
+
     <link href="assets/slick/slick.css" rel="stylesheet">
     <link href="assets/slick/slick-theme.css" rel="stylesheet">
     <script src="assets/slick/slick.min.js"></script>
@@ -83,110 +76,6 @@
     <script type="text/javascript">
     THREE.DefaultLoadingManager.onProgress = function ( item, loaded, total ) {
         console.log( item, loaded, total );
-    };
-    </script>
-    <script type="text/javascript">
-    $(document).ready(function(){
-      $("#id-light").hover(function(){
-          $(this).attr("src", function(index, attr){
-              return attr.replace(".png", "-dark.png");
-          });
-      }, function(){
-          $(this).attr("src", function(index, attr){
-              return attr.replace("-dark.png", ".png");
-          });
-      });
-      $('#nav-icon4').click(function(){
-        $(this).toggleClass('open');
-        $('.menu').fadeToggle('fast', function() {
-          $('.menu-item').fadeToggle('slow');
-        });
-      });
-      $('.navg').click(function() {
-        //$('#nav-icon4').toggleClass('open');
-      })
-    });
-    </script>
-    <script src="assets/slick/slick.min.js"></script>
-    <script>
-     $('.slick').not('.slick-initialized').slick({
-      arrows: false,
-      dots: true,
-      appendDots: $('.arrows')
-     });
-    </script>
-    <script type="text/javascript">
-    Barba.Pjax.start();
-    Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container) {
-       $('.slick').not('.slick-initialized').slick({
-        arrows: false,
-        dots: true,
-        appendDots: $('.arrows')
-       });
-       $('#nav-icon4').removeClass('open');
-      });
-    var BaseTransition = Barba.BaseTransition;
-    var FadeTransition = Barba.BaseTransition.extend({
-      start: function() {
-        /**
-         * This function is automatically called as soon the Transition starts
-         * this.newContainerLoading is a Promise for the loading of the new container
-         * (Barba.js also comes with an handy Promise polyfill!)
-         */
-
-        // As soon the loading is finished and the old page is faded out, let's fade the new page
-        Promise
-          .all([this.newContainerLoading, this.fadeOut()])
-          .then(this.fadeIn.bind(this));
-      },
-
-      fadeOut: function() {
-        /**
-         * this.oldContainer is the HTMLElement of the old Container
-         */
-
-        return $(this.oldContainer).animate({ opacity: 0 }).promise();
-      },
-
-      fadeIn: function() {
-        /**
-         * this.newContainer is the HTMLElement of the new Container
-         * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
-         * Please note, newContainer is available just after newContainerLoading is resolved!
-         */
-
-        var _this = this;
-        var $el = $(this.newContainer);
-
-        $(this.oldContainer).hide();
-
-        $el.css({
-          visibility : 'visible',
-          opacity : 0
-        });
-
-        $el.animate({ opacity: 1 }, 400, function() {
-          /**
-           * Do not forget to call .done() as soon your transition is finished!
-           * .done() will automatically remove from the DOM the old Container
-           */
-
-          _this.done();
-        });
-      }
-    });
-
-    /**
-     * Next step, you have to tell Barba to use the new Transition
-     */
-
-    Barba.Pjax.getTransition = function() {
-      /**
-       * Here you can use your own logic!
-       * For example you can use different Transition based on the current page or link...
-       */
-
-      return FadeTransition;
     };
     </script>
     <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>

@@ -1,0 +1,24 @@
+html, body {
+  overflow: scroll;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,fff7ee+0,ffeaea+100 */
+  background: #FEF8ED;
+  color: #444;
+}
+
+.fixed-header {
+  position: fixed;
+  z-index: 1;
+}
+
+.top-center {
+  left: 171%;
+}
+
+.hide-under {
+  z-index: 0;
+}
+
+#bottom {
+  position: static;
+}
+
