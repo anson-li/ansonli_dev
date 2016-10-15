@@ -1,6 +1,11 @@
+/* * * * * * * * * * *
+* ansonli.ca supplementary stylesheet
+* used for scrollable page implementation
+* reorganised for general use
+* * * * * * * * * * * */
+
 html, body {
   overflow: scroll;
-  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,fff7ee+0,ffeaea+100 */
   background: #FEF8ED;
   color: #444;
 }
