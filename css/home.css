@@ -11,6 +11,8 @@
 * 6.0: Menus
 * 7.0: Bootstrap 
 * 8.0: Three.js
+* 9.0: Hamburger Menu
+* 10.0: Preloader
 * * * * * * * * * * * */
 
 /* * * * * * *
@@ -49,21 +51,26 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 * 2.1 - Body / HTML formatting
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-
+/*
 body, html {
   width: 100%;
   height: 100%;
 }
-
+*/
 body {
   font-family: "Calibre";
   font-weight: 300;
   font-size: 1em;
   text-align: left;
   letter-spacing: 1.5px;
-  background-color: #FEF8ED;
+  
+  background-color: #FFF;
   margin:0;
   color: #333;
+}
+
+.barba-container {
+  background-color: none;
 }
 
 @media (min-width: 0px) {
@@ -79,6 +86,10 @@ body {
   body {
     font-size: 15px;
   }
+} @media (min-width: 1500px) {
+  body {
+    font-size: 13px;
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -87,12 +98,21 @@ body {
 
 .spacer-xs {
   width: 50px;
-  height: 5em;
+  height: 2em;
 }
 
 .spacer-sm {
   width: 50px;
-  height: 10em;
+  height: 5em;
+}
+
+@media (min-width: 1024px) {
+  .spacer-xs {
+     height: 5em;
+  }
+  .spacer-sm {
+    height: 10em;
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -151,13 +171,18 @@ body {
 }
 
 .left-top {
-  top: 20%;
+  top: 10%;
 }
+
 @media (min-width: 1024px) {
   .left-top {
     padding-top: 10%;
     left: 7%;
   }
+}
+
+.paddingleft-0 {
+  padding-left: 0;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -166,6 +191,33 @@ body {
 
 img {
   position: relative;
+}
+
+.bg-img {
+  position: absolute; 
+  top: -150px; 
+  clip: rect(128px,6000px,1500px,0px);
+  left: -350px;
+}
+
+.line-break {
+  width: 170px;
+}
+
+.img-panel {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .line-break {
+    width: auto;
+  } 
+  .img-panel {
+    width: auto;
+  }
+  .bg-img {
+    left: 0;
+  }
 }
 
 /* * * * * * *
@@ -184,14 +236,14 @@ h1 {
 
 h2 {
   font-family: 'Calibre-Bold', serif;
-  font-size: 8em;
-  letter-spacing: 5px;
+  font-size: 5em;
+  letter-spacing: 3px;
 }
 
 h3 {
   font-family: 'Calibre-Bold', serif;
-  font-size: 5em;
-  letter-spacing: 3px;
+  font-size: 3em;
+  letter-spacing: 2px;
 }
 
 h4 {
@@ -213,13 +265,41 @@ h6 {
 
 h7 {
   font-family: 'Calibre', serif;
-  letter-spacing: 5px;
+  letter-spacing: 4px;
   font-size: 1.5em;
 }
 
 p {
   text-align: left;
   font-size: 1.4em;
+}
+
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 4.5em;
+  }
+  h2 {
+    font-size: 8em;
+    letter-spacing: 5px;
+  }
+  h3 {
+    font-size: 5em;
+    letter-spacing: 3px;
+  }
+}
+
+@media (min-width: 1500px) {
+  h5 {
+    font-size: 1.3em;
+  }
+  h7 {
+    font-size: 1.1em;
+  }
+  p {
+    font-size: 1.1em;
+  }
+
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -298,6 +378,14 @@ a {
   color: #333;
 }
 
+.color-bg {
+  height: 100%;
+  width: 100%;
+  background-color: #FEF8ED;
+  z-index: -1000;
+  position: fixed;
+}
+
 /* * * * * * *
 * 5.0: Buttons / OnHover
 * * * * * * */
@@ -325,9 +413,9 @@ a:hover, a:visited, a:link, a:active {
     position: absolute;
     display: block;
     width: 0%;
-    height: 1px;
+    height: 0.5px;
     margin-top: -0.7em;
-    background: #333;
+    background: #444;
     transform-origin: center left;
     transition: 0.25s ease;
     left: -0.5em;
@@ -337,30 +425,32 @@ a:hover, a:visited, a:link, a:active {
     width: 130%;    
 }
 
-.bigstrike {
-    display: inline-block;
-    position: relative;
-}
+@media (min-width: 1024px) {
+  .bigstrike {
+      display: inline-block;
+      position: relative;
+  }
 
-.bigstrike:hover {
-  text-decoration: none;
-}
+  .bigstrike:hover {
+    text-decoration: none;
+  }
 
-.bigstrike:after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 0%;
-    height: 10px;
-    margin-top: -0.7em;
-    background: rgba(255, 201, 155, 0.9);
-    transform-origin: center left;
-    transition: 0.25s ease;
-    left: -0.3em;
-}
+  .bigstrike:after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 0%;
+      height: 10px;
+      margin-top: -0.7em;
+      background: rgba(255, 201, 155, 0.9);
+      transform-origin: center left;
+      transition: 0.25s ease;
+      left: -0.3em;
+  }
 
-.bigstrike:hover:after {
-    width: 110%;
+  .bigstrike:hover:after {
+      width: 110%;
+  }
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
@@ -390,6 +480,43 @@ a:hover, a:visited, a:link, a:active {
   background: #333;
   padding: 0.5em 2.2em; 
 }
+
+.img-icon > .bottom, 
+.img-icon > .top {
+  width: 30px;
+}
+
+.item-two {
+  padding-left: 40px;
+}
+
+.item-three {
+  padding-left: 80px;
+}
+
+.item-four {
+  padding-left: 120px;
+}
+
+@media( min-width: 768px ) {
+  .img-icon > .bottom, 
+  .img-icon > .top {
+    width: 50px;
+  }
+
+  .item-two {
+    padding-left: 80px;
+  }
+
+  .item-three {
+    padding-left: 160px;
+  }
+
+  .item-four {
+    padding-left: 240px;
+  }
+}
+
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 * 5.3 - Color-Box Implementation
@@ -430,21 +557,136 @@ a:hover, a:visited, a:link, a:active {
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
-* 5.4 - Additional
+* 5.4 - Dropdown
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
-.highlight {
-  background: #ffc98d; /* Old browsers */
-  background: -moz-linear-gradient(45deg, #ffc98d 0%, #ffd7ab 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(45deg, #ffc98d 0%,#ffd7ab 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(45deg, #ffc98d 0%,#ffd7ab 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffc98d', endColorstr='#ffd7ab',GradientType=1 );
-  margin: 0px 0px;
-  padding-bottom: 10px;
-  line-height: 0.1;
-  border-radius: 1px;
-  display:inline-block;
+.dropdown {
+  position: absolute;
+  left: 0; right: 0;
+  margin-top: 10px;
+  width: 100vw;
 }
+
+ul {
+  background-color: #FFF;
+  list-style-type: none;
+  margin: 0;
+  padding-top: 20px;
+  padding-left: 0;
+  padding-bottom: 10px;
+}
+
+li a {
+    display: block;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* 5.5 - Additional
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (min-width: 1024px) {
+  .highlight {
+    position: relative;
+    display:inline-block;
+  }
+
+  .highlight:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 105%;
+    height: 15px;
+    margin-top: -0.7em;
+    background: rgba(255, 201, 155, 0.9);
+    transform-origin: center left;
+    transition: 0.25s ease;
+    z-index: -1;
+    left: 0em;
+  }
+}
+
+/* Keyframe Elements */
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+    -webkit-transform: translate3d(0, 100%, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Page Transitions */
+
+/*.m-scene {*/
+
+  .scene_element {
+    animation-duration: 0.5s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: both;
+
+    -webkit-animation-duration: 0.5s;
+    -webkit-transition-timing-function: ease-in;
+    -webkit-animation-fill-mode: both;
+  }
+
+  .scene_element--fadein {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+  }
+
+  .scene_element--fadeinup {
+    -webkit-animation-name: fadeInUp;
+    animation-name: fadeInUp;
+  }
+
+  /** Reverse "exit" animations */
+  .is-exiting {
+      .scene_element {
+        animation-direction: alternate-reverse;
+        -webkit-animation-direction: alternate-reverse;
+      }
+  }
+/*}*/
+
 
 /* * * * * * *
 * 6.0: Menus
@@ -482,9 +724,28 @@ a:hover, a:visited, a:link, a:active {
   #left, #right {
     width: 55px;
   }
-  #top, #bottom {
+  #top {
     height: 55px;
-  }   
+  }  
+   #bottom {
+    height: 55px;
+   } 
+}
+
+/* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+* 6.2 - Mobile Menu Implementation
+* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+.menuhead {
+  width: 100vw;
+  left: 0; right: 0;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2em;
+}
+
+.menulink {
+  text-align: center;
 }
 
 /* * * * * * *
@@ -515,18 +776,185 @@ canvas {
   display: inline-block;
 }
 
+/* * * * * * *
+* 9.0: Hamburger Menu
+* * * * * * */
 
+.title {
+  float: left;
+  padding-left: 30px;
+}
 
+.hamburger-menu {
+  float: right;
+  padding-right: 30px;
+}
 
+/* * * * * * *
+* Other
+* * * * * * */
 
+@media (max-width: 1024px) {
+  #id-light {
+    height: 80px;
+  }
+}
 
+/* * * * * * *
+* 10.0: Preloader
+* * * * * * */
 
+#loader-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
 
+.loader-img {
+  display: block;
+  position: relative;
+  margin: -112px 0 0 -30px;
+  z-index: 1500;
+  width: 45px;
+  left: 50%;
+  top: 50%;
+}
 
+#loader {
+  display: block;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  width: 150px;
+  height: 150px;
+  margin: -75px 0 0 -75px;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 201, 155, 0.9);;
+  z-index: 1500;
+  border-radius: 50%;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 1.5s linear infinite;
+}
 
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border: 2px solid transparent;
+    border-top-color: #333;
+    border-radius: 50%;
+    -webkit-animation: spin 3s linear infinite;
+    animation: spin 2.5s linear infinite;
+}
 
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border: 2px solid transparent;
+    border-top-color: #FBB05D;
+    border-radius: 50%;
+    -webkit-animation: spin 4s linear infinite;
+    animation: spin 3.5s linear infinite;
+}
 
+/* copy and paste the animation inside all 3 elements */
+/* #loader, #loader:before, #loader:after */
+-webkit-animation: spin 1.5s linear infinite;
+animation: spin 1.5s linear infinite;
+ 
+/* include this only once */
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
 
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #fff;
+    z-index: 1000;
+}
+ 
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+ 
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(-100%);  /* IE 9 */
+    transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+}
+ 
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(100%);  /* IE 9 */
+    transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+}
+
+.loaded #loader,
+.loaded .loader-img {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out; 
+            transition: all 0.3s ease-out;
+}
+
+.loaded #loader-wrapper {
+    visibility: hidden;
+    -webkit-transform: translateY(-100%);
+            -ms-transform: translateY(-100%);
+                transform: translateY(-100%);
+ 
+        -webkit-transition: all 0.3s 0.6s ease-out; 
+                transition: all 0.3s 0.6s ease-out;
+}
+
+.loaded #loader-wrapper .loader-section.section-right,
+.loaded #loader-wrapper .loader-section.section-left {
+ 
+    -webkit-transition: all 0.3s 0.3s ease-out; 
+            transition: all 0.3s 0.3s ease-out;
+}
+
+.no-js #loader-wrapper {
+    display: none;
+}
 
 
 

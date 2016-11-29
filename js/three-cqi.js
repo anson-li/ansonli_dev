@@ -7,7 +7,7 @@
       AMOUNTX = 10,
       AMOUNTY = 10,
 
-      camera, scene, renderer;
+      camera, scene, renderer, geometry, particles;
 
       init();
       animate();
@@ -46,7 +46,8 @@
 
         } );
 
-        var geometry = new THREE.Geometry();
+        geometry = new THREE.Geometry();
+        particles = [];
 
         for ( var i = 0; i < 100; i ++ ) {
 
@@ -59,6 +60,7 @@
           particle.scale.x = particle.scale.y = Math.random() * 3;
           scene.add( particle );
 
+          particles.push( particle );
           geometry.vertices.push( particle.position );
 
         }
@@ -131,7 +133,7 @@
       //
 
       function animate() {
-
+      
         requestAnimationFrame( animate );
         render();
 
@@ -140,8 +142,7 @@
       function render() {
         camera.position.x += ( mouseX - camera.position.x ) * .015;
         camera.position.y += ( - mouseY - camera.position.y ) * .015;
-        camera.lookAt( scene.position ); 
-
+        camera.lookAt( scene.position );
         renderer.render( scene, camera );
 
       }

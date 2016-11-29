@@ -12,123 +12,213 @@
     <script src="js/barba.min.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/scrollpage.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <script src="js/animate-dev.js" type="text/javascript"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+          var wow = new WOW({
+              boxClass: 'wow',
+              animateClass: 'animated',
+              offset: 0,
+              mobile: true,
+              live: true,
+          });
+          wow.init();
+      });
+    </script>
+    <script src="js/jquery.smoothState.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        'use strict';
+        var $body = $('html, body'),
+        $data = $('#barba-wrapper'),
+        content = $('#fixed-wrapper').smoothState({
+          // debug: true,
+          // prefetch: true,
+          // cacheLength: 2,
+          // anchors: 'a',
+          onStart: {
+            duration: 0, // Duration of our animation
+            render: function ($container) {
+              // Add your CSS animation reversing class
+              
+              $container.addClass('is-exiting');
 
+              // Restart your animation
+              // smoothState.restartCSSAnimations();
+            }
+          },
+          onReady: {
+            duration: 0,
+            render: function ($container, $newContent) {
+              // Remove your CSS animation reversing class
+              $container.removeClass('is-exiting');
+
+              // Inject the new content
+              $container.html($newContent);
+
+            }
+          }
+        }).data('smoothstate');
+        });
+    </script>
   </head>
   <body>
 
-  <div class="fixed-wrapper">
-    <div class="fixed-header">
+  <div id="fixed-wrapper" class="fixed-wrapper m-scene">
+    <div class="fixed-header m-header scene-element">
       <div id="left"></div>
       <div id="right"></div>
       <div id="top"></div>
+      <div id="bigleft"></div>
+      <div id="bigright"></div>
+      <div id="bigtop"></div>
 
-      <div class="col-md-12 top-center">
+      <div class="col-md-12 top-center hidden-xs">
         <h5 class="connect"><a class="strikethrough" href="resume.html">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="strikethrough"  href="work.html" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="strikethrough"  href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
       </div>
+      <div class="col-md-12 hidden-sm hidden-md hidden-lg hidden-xl paddingleft-0">
+        <h5 class="toggle menuhead">
+          <span class="title">Anson Li</span>
+          <div class="hamburger-menu">&#9776;</div>
+        </h5>
+        <div class="dropdown">
+          <h5>
+          <ul class="menu" hidden="true">
+            <li><a class="strikethrough menulink" href="index.html">Home</a></li>
+            <li><a class="strikethrough menulink" href="resume.html">Resume</a></li>
+            <li><a class="strikethrough menulink" href="work.html">Work</a></li>
+            <li><a class="strikethrough menulink" href="contact.html">Contact</a></li>
+          </ul>
+          </h5>
+        </div>
+      </div>
       <div class="header">
         <canvas></canvas>
       </div>
-      <a href="index.html"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
-      </div>
-      <div id="barba-wrapper">
+      <a href="index.html" class="hidden-xs"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
+    </div>
+      <div id="barba-wrapper" class="m-page scene_element scene_element--fadein">
         <div class="barba-container">
-        <div class="flex-container container ">
+        <div id="scrollContainer" class="flex-container container ">
           <br><br>
           <div class="hide-under col-md-12 left-top">
-          <img style="position: absolute; top: -150px" src="assets/bg-alberta.png" />
+          <img class="bg-img" src="assets/bg-alberta.png" />
           <div class="spacer-sm"></div>
           <h2>Anson Li</h2>
           <div class="col-md-12">
-            <img src="assets/line-break.png" />
+            <img class="line-break" src="assets/line-break.png" />
           </div>
           <div class="spacer-xs"></div>
           <br>
 
-          <div class="col-md-12">
+          <div class="col-md-12 wow fadeIn" data-wow-duration="1s">
           <h3>Education</h3>
           <br><br>
           <div class="col-md-3">
-          <p>University of Alberta Entrance Scholarship</p>
+          <p class="wow fadeIn" data-wow-duration="0.5s">University of Alberta Entrance Scholarship</p>
           </div><div class="col-md-3">
-          <p>Alexander Rutherford Scholarship</p>
+          <p class="wow fadeIn" data-wow-duration="1s">Alexander Rutherford Scholarship</p>
           </div><div class="col-md-3">
-          <p>International Baccalaureate Certificate</p>
+          <p class="wow fadeIn" data-wow-duration="1.5s">International Baccalaureate Certificate</p>
           </div>
           <div class="spacer-sm"></div>
-          <img src="assets/line-break.png" />
+          <img class="line-break" src="assets/line-break.png" />
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-12 wow fadeIn" data-wow-duration="1s">
             <br><br>
             <h3>Work Experience</h3>
             <br><br>
             <div class="col-md-12">
             <p>
+              <span class="wow fadeIn" data-wow-duration="0.5s">
               <span class="b">CRUDE QUALITY INC</span>, Edmonton, AB || Full Stack Developer<br>
               May ‐ September 2016<br><br>
               ● Designed and produced numerous wireframes and prototypes<br>
               ● Developed programming code from scratch to create fully responsive web design<br>
               ● Provided requirements analysis and documentation with stakeholders<br>
               ● Worked extensively in LAMP stack to streamline development
+              </span>
+              <span class="wow fadeIn" data-wow-duration="1s">
               <br><br>
               <span class="b">ALBERTA ENVIRONMENT AND PARKS</span>, Edmonton, AB || Software Developer<br>
               January ‐ August 2015<br><br>
               ● Worked as sole software developer for heuristics‐based environmental model system<br>
               ● Engaged in full‐stack development, from ideation to publishing<br>
               ● Worked alongside management to identify key roles and products for development
+              </span>
               <br><br>
+              <span class="wow fadeIn" data-wow-duration="1s">
               <span class="b">SYNCRUDE CANADA LTD.</span>, Fort McMurray, AB || General Summer Student<br>
               May – August 2014<br><br>
               ● Worked alongside process engineers at Syncrude site<br>
               ● Developed an understanding of key engineering concepts and their real‐world application<br>
               ● Managed a 3‐man team to identify points of interest around the site to ensure more efficient operations
+              </span>
               <br><br>
+              <span class="wow fadeIn" data-wow-duration="1s">
               <span class="b">ENERFEST, INC.</span>, Calgary, AB || Summer Student<br>
               May – August 2013<br><br>
               ● Developed software for data analysis and data management<br>
               ● Involved as primary liaison for development of website<br>
               ● Participated in a training course at Cashco, Inc. in Ellsworth, Kansas<br>
+              </span>
               </p>
               <br><br>
             </div>
-            <img src="assets/line-break.png" /> 
+            <img class="line-break" src="assets/line-break.png" /> 
           </div>
 
-          <div class="col-md-12">
+          <div class="col-md-12 wow fadeIn" data-wow-duration="1s">
             <br><br>
             <h3>Software Experience</h3>
             <br><br>  
             <div class="col-md-12">
               <p>
-                <span class="b">C Programming</span><br>
-                ● Developed process monitoring software for Linux‐based systems<br>
-                ● Implemented basic algorithmic processes and interpreter<br><br>
-                <span class="b">Ruby / Ruby on Rails:</span><br>
-                ● Implemented RoR framework in developing a website designed for statistics analysis and dynamic visual
-                representation<br><br>
-                <span class="b">Java / Android</span><br>
-                ● Developed an android application for trading cards<br>
-                ● Developed various side projects for both Android and Java<br><br>
-                <span class="b">Full Stack Development</span><br>
-                ● Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models<br>
-                ● Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil<br><br>
-                <span class="b">Front‐End Development</span><br>
-                ● Developed and sold various websites for customers<br>
-                ● Oversaw development of corporate websites for companies including Enerfest, Inc.<br><br>
-                <span class="b">Back‐End Development</span><br>
-                ● Developed backend structures and integrated them for AlbertaMES<br>
-                ● Worked with different database implementation methods such as Heroku and BerkeleyDB<br><br>
-                <span class="b">Other Work</span><br>
-                ● Expertise in Microsoft products including Excel, Word, Access, PowerPoint<br>
-                ● Developed using multiple OSes, including Ubuntu, OSX and Windows<br>
-                ● Worked with various graphics and photo editing software including Photoshop and Sketch<br>
-                ● Developed with other languages and frameworks such as Python and ASP.net<br>
-                ● Implemented other technologies including Github, Sublime Text 3 and Eclipse<br>
+                <span class="wow fadeIn">
+                  <span class="b">C Programming</span><br>
+                  ● Developed process monitoring software for Linux‐based systems<br>
+                  ● Implemented basic algorithmic processes and interpreter<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Ruby / Ruby on Rails:</span><br>
+                  ● Implemented RoR framework in developing a website designed for statistics analysis and dynamic visual
+                  representation<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Java / Android</span><br>
+                  ● Developed an android application for trading cards<br>
+                  ● Developed various side projects for both Android and Java<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Full Stack Development</span><br>
+                  ● Developed AlbertaMES in MEAN, a heuristics‐driven web application for environmental models<br>
+                  ● Developed CrudeMonitor in LAMP, a data management and analytics tool for Canadian crude oil<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Front‐End Development</span><br>
+                  ● Developed and sold various websites for customers<br>
+                  ● Oversaw development of corporate websites for companies including Enerfest, Inc.<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Back‐End Development</span><br>
+                  ● Developed backend structures and integrated them for AlbertaMES<br>
+                  ● Worked with different database implementation methods such as Heroku and BerkeleyDB<br><br>
+                </span>
+                <span class="wow fadeIn">
+                  <span class="b">Other Work</span><br>
+                  ● Expertise in Microsoft products including Excel, Word, Access, PowerPoint<br>
+                  ● Developed using multiple OSes, including Ubuntu, OSX and Windows<br>
+                  ● Worked with various graphics and photo editing software including Photoshop and Sketch<br>
+                  ● Developed with other languages and frameworks such as Python and ASP.net<br>
+                  ● Implemented other technologies including Github, Sublime Text 3 and Eclipse<br>
+                </span>
               </p>
               <div class="spacer-sm"></div>
             </div>
@@ -141,6 +231,8 @@
         </div>
       </div>
       <div id="bottom"></div>
+    </div>
+    </div>
     </div>
   </body>
 </html>

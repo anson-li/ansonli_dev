@@ -16,43 +16,79 @@
     <script src="js/ImprovedNoise.js"></script>
     <script src="js/Detector.js"></script>
     <script src="js/libs/stats.min.js"></script>
+
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <script src="js/animate-dev.js" type="text/javascript"></script>
+
+    <script src="js/wow.min.js"></script>
+    <script type="text/javascript">
+      new WOW().init();
+    </script>
+
   </head>
   <body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <img class="loader-img" src="assets/logo_flat.png"></img>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
+
+  <div class="color-bg"></div>
 
   <div class="fixed-wrapper fixed-vert">
     <div id="left"></div>
     <div id="right"></div>
-    <div id="top"></div>
+    <div id="top" ></div>
     <div id="bottom"></div>
 
-    <div class="col-md-12 top-center">
+    <div class="col-md-12 top-center hidden-xs">
       <h5><a class="strikethrough" href="resume.html">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a class="strikethrough"  href="work.html" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       <a class="strikethrough"  href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
     </div>
+    <div style="z-index: 100" class="col-md-12 hidden-sm hidden-md hidden-lg hidden-xl paddingleft-0">
+        <h5 class="toggle menuhead">
+          <span class="title">Anson Li</span>
+          <div class="hamburger-menu">&#9776;</div>
+        </h5>
+        <div class="dropdown">
+          <h5>
+          <ul class="menu" hidden="true">
+            <li><a class="strikethrough menulink" href="index.html">Home</a></li>
+            <li><a class="strikethrough menulink" href="resume.html">Resume</a></li>
+            <li><a class="strikethrough menulink" href="work.html">Work</a></li>
+            <li><a class="strikethrough menulink" href="contact.html">Contact</a></li>
+          </ul>
+          </h5>
+        </div>
+      </div>
+
     <div class="header">
       <canvas></canvas>
     </div>
-    <a href="index.html"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
+    <a href="index.html" class="hidden-xs"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
     <div id="barba-wrapper" style="height: 100%; width: 100%">
       <div class="barba-container" style="height: 100%; width: 100%">
       <div class="flex-container container ">
         <br><br>
         <div class="col-md-12 left-top">
         <img style="position: absolute; top: -150px; z-index: -2" src="assets/bg-index.png" />
-        <h1>
-        Anson Li is a <span class="highlight">software engineer</span><br>
-        at the University of Alberta,<br>
-        currently working at Questionmark.</h1>
-        <br>
+          <div class="spacer-sm hidden-lg"></div>
+          <h1 id="main-text" class="wow fadeIn" data-wow-duration="1s">
+          Hey - I'm Anson Li, and I <br class="hidden-xs hidden-md visible-lg"> built a <span class="highlight">modelling system</span><br class="hidden-xs hidden-md visible-lg">for the Government of Alberta.
+          <br>
+          </h1>
+          &nbsp;&nbsp;&nbsp;<a id="sub-link" href="albertames.html"><h7 id="sub-text" class="wow fadeIn strikethrough" data-wow-duration="2s">Let's take a peek...</h7></a>
         </div>
       </div>
       <div class="flex-container container">
         <br><br>
         <div class="col-md-12 fixed-bottom">
         <p class="item">
-          <span class="serif">Experiment #001</span>
+          <span class="serif wow fadeIn hidden-sm hidden-md visible-lg" data-wow-duration="1s" data-wow-delay="0.5s">hello@ansonli.ca</span>
         </p>
         <br>
         </div>
@@ -61,8 +97,6 @@
     <div id="info" class="container-fluid">
       <br/>
       <div id="error" style="display: none;">
-      Your browser does not support <strong>WEBGL technology.</strong>.<br/><br/>
-      Please try again with a modern browser.
       </div>
     </div>
     </div>
@@ -78,9 +112,24 @@
         console.log( item, loaded, total );
     };
     </script>
+
+    <script src="js/main-text.js"></script>
     <script src="http://www.threejs.org/examples/js/renderers/Projector.js"></script>
     <script src="http://www.threejs.org/examples/js/renderers/CanvasRenderer.js"></script>
     <script src="js/three-cqi.js"></script>
-    <!--<script src="js/fish-dev.js"></script>-->
+
+    <!-- preload external media -->
+    <link rel="prefetch" href="albertames.html">
+    <link rel="prefetch" href="contact.html">
+    <link rel="prefetch" href="crudemonitor.html">
+    <link rel="prefetch" href="dailyui.html">
+    <link rel="prefetch" href="index.html">
+    <link rel="prefetch" href="resume.html">
+    <link rel="prefetch" href="sscte.html">
+    <link rel="prefetch" href="teamaqua.html">
+    <link rel="prefetch" href="work.html">
+
+
+    <script src="js/preloader.js"></script>
   </body>
 </html>

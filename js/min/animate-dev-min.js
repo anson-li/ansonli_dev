@@ -1,0 +1,1 @@
+$("document").ready(function(){$(".toggle").click(function(){"none"===$(".menu").css("display")&&($(".menulink").addClass("animated fadeInLeft"),window.setTimeout(function(){$(".menulink").removeClass("animated fadeInLeft")},1e3)),$(".menu").stop().slideToggle("slow")})});

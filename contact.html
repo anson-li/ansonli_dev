@@ -15,68 +15,138 @@
    
     <link rel="stylesheet" href="css/home.css" />
     <link rel="stylesheet" href="css/scrollpage.css" />
+    <link rel="stylesheet" href="css/animate.css" />
+    <script src="js/animate-dev.js" type="text/javascript"></script>
+    <script src="js/wow.min.js"></script>
+    <script type="text/javascript">
+      $(window).load(function() {
+          var wow = new WOW({
+              boxClass: 'wow',
+              animateClass: 'animated',
+              offset: 0,
+              mobile: true,
+              live: true,
+          });
+          wow.init();
+      });
+    </script>
+    <script src="js/jquery.smoothState.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        'use strict';
+        var $body = $('html, body'),
+        $data = $('#barba-wrapper'),
+        content = $('#fixed-wrapper').smoothState({
+          // debug: true,
+          // prefetch: true,
+          // cacheLength: 2,
+          // anchors: 'a',
+          onStart: {
+            duration: 0, // Duration of our animation
+            render: function ($container) {
+              // Add your CSS animation reversing class
+              
+              $container.addClass('is-exiting');
+              $body.animate({ scrollTop: 0 });
 
+              // Restart your animation
+              // smoothState.restartCSSAnimations();
+            }
+          },
+          onReady: {
+            duration: 0,
+            render: function ($container, $newContent) {
+              // Remove your CSS animation reversing class
+              $container.removeClass('is-exiting');
+
+              // Inject the new content
+              $container.html($newContent);
+
+            }
+          }
+        }).data('smoothstate');
+        });
+    </script>
   </head>
   <body>
 
-  <div class="fixed-wrapper">
-    <div class="fixed-header">
+  <div class="fixed-wrapper m-scene">
+    <div class="fixed-header m-header scene-element">
       <div id="left"></div>
       <div id="right"></div>
       <div id="top"></div>
 
-      <div class="col-md-12 top-center">
+      <div class="col-md-12 top-center hidden-xs">
         <h5 class="connect"><a class="strikethrough" href="resume.html">Resume</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="strikethrough"  href="work.html" >Work</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <a class="strikethrough"  href="contact.html">Contact</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h5>
       </div>
+      <div class="col-md-12 hidden-sm hidden-md hidden-lg hidden-xl paddingleft-0">
+        <h5 class="toggle menuhead">
+          <span class="title">Anson Li</span>
+          <div class="hamburger-menu">&#9776;</div>
+        </h5>
+        <div class="dropdown">
+          <h5>
+          <ul class="menu" hidden="true">
+            <li><a class="strikethrough menulink" href="index.html">Home</a></li>
+            <li><a class="strikethrough menulink" href="resume.html">Resume</a></li>
+            <li><a class="strikethrough menulink" href="work.html">Work</a></li>
+            <li><a class="strikethrough menulink" href="contact.html">Contact</a></li>
+          </ul>
+          </h5>
+        </div>
+      </div>
+
       <div class="header">
         <canvas></canvas>
       </div>
-      <a href="index.html"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
+      <a href="index.html" class="hidden-xs"><img height="150px" id="id-light" style="position: absolute; top: 20px; left: 20px;" src="assets/logo.svg"></a>
       </div>
-      <div id="barba-wrapper">
+
+
+      <div id="barba-wrapper" class="m-page scene_element scene_element--fadein">
         <div class="barba-container">
         <div class="flex-container container ">
           <br><br>
           <div class="hide-under col-md-12 left-top">
-          <img style="position: absolute; top: -150px" src="assets/bg-anson.png" />
+          <img class="bg-img" src="assets/bg-anson.png" />
           <div class="spacer-sm"></div>
           <h2>Contact</h2>
           <div class="col-md-12">
-            <img src="assets/line-break.png" />
+            <img class="line-break" src="assets/line-break.png" />
           </div>
           <div class="spacer-xs"></div>
           <br>
 
           <div class="col-md-12">
             <br><br>
-            <div class="col-md-6">
+            <div class="col-md-6 wow fadeIn">
               <p>
                 Hi, I'm <span class="b"> Anson Li</span>. I'm currently at the University of Alberta, finishing my final year in Software Engineering. When I'm not busy learning the ins and outs of software practices, I dedicate my learning to full-stack development, scripting languages, and coffee culture.
                 <br><br>
                 Feel free to shoot me a message about my works, my experiences, or anything else that you'd like to know -- I'm   ready.
                 <br><br>
-                <div class="crossfade">
-                  <a href="http://blog.ansonli.ca">
+                <div class="crossfade wow fadeIn" data-wow-duration="1s">
+                  <a class="img-icon" href="http://blog.ansonli.ca">
                     <img class="bottom" src="assets/ico-blog-hover.png" />
                     <img class="top" src="assets/ico-blog.png" />
                   </a>
                </div>
-               <div class="crossfade" style="padding-left: 70px">
-                  <a href="http://twitter.com/helloanson">
+               <div class="crossfade wow fadeIn item-two" data-wow-duration="1.5s">
+                  <a class="img-icon" href="http://twitter.com/helloanson">
                     <img class="bottom" src="assets/ico-twitter-hover.png"  />
                     <img class="top" src="assets/ico-twitter.png"  />
                   </a>
                </div>
-               <div class="crossfade" style="padding-left: 140px">
-                  <a href="http://github.com/anson-li">
+               <div class="crossfade wow fadeIn item-three" data-wow-duration="2s">
+                  <a class="img-icon" href="http://github.com/anson-li">
                     <img class="bottom" src="assets/ico-github-hover.png" />
                     <img class="top" src="assets/ico-github.png" />
                   </a>
                </div>
-               <div class="crossfade" style="padding-left: 210px">
-                  <a href="https://www.linkedin.com/in/anson-li-65701483">
+               <div class="crossfade wow fadeIn item-four" data-wow-duration="2.5s">
+                  <a class="img-icon" href="https://www.linkedin.com/in/anson-li-65701483">
                     <img class="bottom" src="assets/ico-linkedin-hover.png" />
                     <img class="top" src="assets/ico-linkedin.png" />
                   </a>
@@ -88,6 +158,8 @@
         </div>
         <div class="flex-container container">
           <br><br>
+          <div class="spacer-sm"></div>
+          <div class="spacer-sm"></div>
           <div class="spacer-sm"></div>
           <div class="col-md-12 fixed-bottom">
           </div>
