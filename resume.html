@@ -30,23 +30,23 @@
       });
     </script>
     <script src="js/jquery.smoothState.js"></script>
-    <script type="text/javascript">
+    <script src="js/preloader.js"></script>
+    <!-- <script type="text/javascript">
       $(function() {
         'use strict';
         var $body = $('html, body'),
         $data = $('#barba-wrapper'),
         content = $('#fixed-wrapper').smoothState({
-          // debug: true,
-          // prefetch: true,
-          // cacheLength: 2,
-          // anchors: 'a',
+          debug: true,
+          prefetch: true,
+          cacheLength: 2,
+          anchors: 'a',
           onStart: {
             duration: 0, // Duration of our animation
             render: function ($container) {
               // Add your CSS animation reversing class
-              
               $container.addClass('is-exiting');
-
+              $('#loader').addClass('is-exiting');
               // Restart your animation
               // smoothState.restartCSSAnimations();
             }
@@ -56,17 +56,22 @@
             render: function ($container, $newContent) {
               // Remove your CSS animation reversing class
               $container.removeClass('is-exiting');
-
               // Inject the new content
               $container.html($newContent);
-
             }
           }
         }).data('smoothstate');
         });
-    </script>
+    </script> -->
   </head>
   <body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <img class="loader-img" src="assets/logo_flat.png"></img>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
 
   <div id="fixed-wrapper" class="fixed-wrapper m-scene">
     <div class="fixed-header m-header scene-element">
@@ -110,9 +115,11 @@
           <div class="hide-under col-md-12 left-top">
           <img class="bg-img" src="assets/bg-alberta.png" />
           <div class="spacer-sm"></div>
-          <h2>Anson Li</h2>
-          <div class="col-md-12">
-            <img class="line-break" src="assets/line-break.png" />
+          <div class="center-sm">
+            <h2>Anson Li</h2>
+            <div class="col-md-12">
+              <img class="line-break" src="assets/line-break.png" />
+            </div>
           </div>
           <div class="spacer-xs"></div>
           <br>

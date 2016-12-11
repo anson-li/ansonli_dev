@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/animate.css" />
     <script src="js/animate-dev.js" type="text/javascript"></script>
     <script src="js/wow.min.js"></script>
+    <script src="js/preloader.js"></script>
     <script type="text/javascript">
       $(window).load(function() {
           var wow = new WOW({
@@ -30,6 +31,13 @@
     </script>
   </head>
   <body>
+
+  <div id="loader-wrapper">
+    <div id="loader"></div>
+    <img class="loader-img" src="assets/logo_flat.png"></img>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+  </div>
 
   <div class="fixed-wrapper">
     <div class="fixed-header">
@@ -72,9 +80,11 @@
           <img class="bg-img" src="assets/bg-albertames.png" />
           <div class="horizontal"><p>← Let's continue</p></div>
           <div class="spacer-sm"></div>
-          <h2>AlbertaMES</h2>
-          <div class="col-md-12">
-            <img class="line-break" src="assets/line-break.png" />
+          <div class="center-sm">
+            <h2>AlbertaMES</h2>
+            <div class="col-md-12">
+              <img class="line-break" src="assets/line-break.png" />
+            </div>
           </div>
           <div class="spacer-xs"></div>
           <br>
@@ -110,38 +120,41 @@
           <div class="col-md-12">
             <br><br>
             <div class="wow fadeIn">
-              <h3>The Project</h3>
-              <br><br>
-              <div class="col-md-6">
-                <p>
-                  AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months. 
-                  <br><br>
-                  <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" class="btn">Take a peek</a>
-                </p>
+              <div class="col-md-12 no-padding">
+                <h3>The Project</h3>
+                <br><br>
+                <div class="col-md-6">
+                  <p>
+                    AlbertaMES is a heuristics-based web application to filter and isolate projects, models and stations related to environmental care. I was signed on as the primary developer of the application, which was developed over the course of 8 months. 
+                    <br><br>
+                    <a href="http://www.blog.ansonli.ca/index.php/2016/01/04/35/" class="btn">Take a peek</a>
+                  </p>
+                  <br><br><br>
+                </div>
               </div>
-              <br><br><br><br><br><br><br>
-              <div class="spacer-sm"></div>
               <img class="line-break" src="assets/line-break.png" />
               <br><br><br>
             </div>
             <div class="wow fadeIn">
-              <h3>Overview</h3>
-              <br><br>
-              <div class="col-md-3">
-              <div class="box dark-blue"><p>#2C3D51</p></div>
-              &nbsp;&nbsp;&nbsp;
-              <div class="box green"><p>#81B175</p></div>
-              &nbsp;&nbsp;&nbsp;
-              <div class="box white"><p>#FFFFFF</p></div>
-              </div>
-              <div class="col-md-6">
-              <div class="spacer-sm hidden-md hidden-lg"></div>
-              <p>
-                We used ArcGIS API for Javascript to develop this technology, alongside other supporting technologies such as MVC, JQuery and other libraries.
+              <div class="col-md-12 no-padding">
+                <h3>Overview</h3>
                 <br><br>
-                Additionally, our team used a collection of software development methodologies, such as software requirements elicitations and post-mortems, to enhance both the quality of the team’s work as well as the team itself.
-              </p>
-              <br><br><br>
+                <div class="col-md-3">
+                <div class="box dark-blue"><p>#2C3D51</p></div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="box green"><p>#81B175</p></div>
+                &nbsp;&nbsp;&nbsp;
+                <div class="box white"><p>#FFFFFF</p></div>
+                </div>
+                <div class="col-md-6">
+                <div class="spacer-sm hidden-md hidden-lg"></div>
+                <p>
+                  We used ArcGIS API for Javascript to develop this technology, alongside other supporting technologies such as MVC, JQuery and other libraries.
+                  <br><br>
+                  Additionally, our team used a collection of software development methodologies, such as software requirements elicitations and post-mortems, to enhance both the quality of the team’s work as well as the team itself.
+                </p>
+                <br><br><br>
+                </div>
               </div>
               <img class="line-break" src="assets/line-break.png" />
               <br><br><br>
@@ -149,7 +162,7 @@
             <div class="wow fadeIn">
               <h3>Reflection</h3>
               <br><br>
-              <div class="col-md-12">
+              <div class="col-md-12 no-padding">
                 <div class="col-md-6">
                 <p>
                   This project served as my first foray into professional software experience. I learned many facets of work life that are invaluable today; both with regards to technical and soft skills.

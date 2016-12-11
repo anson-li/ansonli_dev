@@ -1,1 +1,1 @@
-$(document).ready(function(){$("body").toggleClass("loaded")});
+$(window).on("load",function(){$("body").toggleClass("loaded")});
