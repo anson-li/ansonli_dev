@@ -88,7 +88,7 @@ body {
   }
 } @media (min-width: 1500px) {
   body {
-    font-size: 13px;
+    font-size: 16px;
   }
 }
 
@@ -189,6 +189,7 @@ body {
   .left-top {
     padding-top: 10%;
     left: 7%;
+    width: 87%;
   }
 }
 
@@ -489,6 +490,18 @@ a:hover, a:visited, a:link, a:active {
   transition: all ease 0.3s; 
 }
 
+.download-img {
+  height: 22px;
+  vertical-align: inherit;
+}
+
+@media (min-width: 1600px) {
+  .download-img {
+    height: 0.3em;
+  }
+}
+
+
 .btn:hover { 
   text-decoration: none;
   color: #fff;
@@ -600,6 +613,12 @@ li a {
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 * 5.5 - Additional
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
+
+@media (min-height: 1000px) {
+  #main-text {
+    padding-top: 10vh;
+  }
+}
 
 @media (min-width: 1024px) {
   .highlight {

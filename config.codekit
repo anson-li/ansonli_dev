@@ -143,6 +143,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/bg-index-dev.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 502956,
+		"inputAbbreviatedPath": "\/assets\/bg-index-dev.png",
+		"outputAbbreviatedPath": "\/assets\/bg-index-dev.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/bg-index.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -161,6 +172,17 @@
 		"initialSize": 178961,
 		"inputAbbreviatedPath": "\/assets\/bg-oil.png",
 		"outputAbbreviatedPath": "\/assets\/bg-oil.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/bg-questionmark.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14133,
+		"inputAbbreviatedPath": "\/assets\/bg-questionmark.png",
+		"outputAbbreviatedPath": "\/assets\/bg-questionmark.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -206,7 +228,7 @@
 		"outputAbbreviatedPath": "\/assets\/min\/drop-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/drop_two.js": {
@@ -217,7 +239,7 @@
 		"outputAbbreviatedPath": "\/assets\/min\/drop_two-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/favicon.jpg": {
@@ -271,6 +293,17 @@
 		"initialSize": 743,
 		"inputAbbreviatedPath": "\/assets\/ico-blog.png",
 		"outputAbbreviatedPath": "\/assets\/ico-blog.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/assets\/ico-download.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1500,
+		"inputAbbreviatedPath": "\/assets\/ico-download.png",
+		"outputAbbreviatedPath": "\/assets\/ico-download.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -440,6 +473,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/assets\/panel-questionmark.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 70925,
+		"inputAbbreviatedPath": "\/assets\/panel-questionmark.png",
+		"outputAbbreviatedPath": "\/assets\/panel-questionmark.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/assets\/panel-sscte-2.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -535,7 +579,7 @@
 		"outputAbbreviatedPath": "\/assets\/slick\/min\/slick-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/slick\/slick.less": {
@@ -566,7 +610,7 @@
 		"outputAbbreviatedPath": "\/assets\/slick\/min\/slick.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/assets\/slick\/slick.scss": {
@@ -943,7 +987,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/animate-dev-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/barba.min.js": {
@@ -954,7 +998,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/barba.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/controls\/OrbitControls.js": {
@@ -965,7 +1009,7 @@
 		"outputAbbreviatedPath": "\/js\/controls\/min\/OrbitControls-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/Detector.js": {
@@ -976,7 +1020,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/Detector-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/fish-dev.js": {
@@ -987,7 +1031,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/fish-dev-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/ImprovedNoise.js": {
@@ -998,7 +1042,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/ImprovedNoise-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/isInViewport.js": {
@@ -1009,7 +1053,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/isInViewport-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/jquery.smoothState.js": {
@@ -1020,7 +1064,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/jquery.smoothState-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/main-text.js": {
@@ -1031,7 +1075,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/main-text-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/animate-dev-min.js": {
@@ -1042,7 +1086,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/animate-dev-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/jquery.smoothState-min.js": {
@@ -1053,7 +1097,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/jquery.smoothState-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/main-text-min.js": {
@@ -1064,7 +1108,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/main-text-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/preloader-min.js": {
@@ -1075,7 +1119,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/preloader-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/three-cqi-min.js": {
@@ -1086,7 +1130,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/three-cqi-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/min\/wow.min-min.js": {
@@ -1097,7 +1141,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/min\/wow.min-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/preloader.js": {
@@ -1108,7 +1152,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/preloader-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/shaders\/SSAOShader.js": {
@@ -1119,7 +1163,7 @@
 		"outputAbbreviatedPath": "\/js\/shaders\/min\/SSAOShader-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/slideout.js": {
@@ -1130,7 +1174,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/slideout-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/slideout.min.js": {
@@ -1141,7 +1185,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/slideout.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/textures\/brick_diffuse.jpg": {
@@ -1163,7 +1207,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/three-cqi-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/three.min.js": {
@@ -1174,7 +1218,7 @@
 		"outputAbbreviatedPath": "\/js\/min\/three.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/wow.min.js": {
@@ -1185,8 +1229,17 @@
 		"outputAbbreviatedPath": "\/js\/min\/wow.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 2,
 		"syntaxCheckerStyle": 1
+		},
+	"\/questionmark.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/questionmark.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/resume.html": {
 		"fileType": 8192,
@@ -1422,7 +1475,7 @@
 	"javascriptAutoOutputPathReplace2": "",
 	"javascriptAutoOutputPathStyle": 2,
 	"javascriptCreateSourceMap": 1,
-	"javascriptOutputStyle": 1,
+	"javascriptOutputStyle": 2,
 	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
@@ -2009,7 +2062,7 @@
 			"flagValue": -1
 			},
 		"sort": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"space-colon": {
@@ -2017,7 +2070,7 @@
 			"flagValue": -1
 			},
 		"toplevel": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"unsafe": {
