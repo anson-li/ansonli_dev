@@ -3,8 +3,8 @@
 Physijs.scripts.worker = 'js/physijs/physijs_worker.js';
 Physijs.scripts.ammo = 'examples/js/ammo.js';
 
-var initScene, render, renderer, scene, sceneText, composer, ground, light, camera, spawnChair, composer, customPass, customPassTitle,
-    ground_material, windowHalfX, windowHalfY, chair_material, loader, mouseX = 0,
+var initScene, render, renderer, scene, sceneText, composer, ground, light, camera, controls, spawnChair, composer, customPass, customPassTitle,
+    ground_material, windowHalfX, windowHalfY, chair_material, loader, mouseX = 0, iterMin = 15, iterMax = 100, donutRange = 200, baseColorOffset = 25, isMobile = false,
     mouseY = 0,
     count = 0,
     countMax = 200,
@@ -13,7 +13,12 @@ var initScene, render, renderer, scene, sceneText, composer, ground, light, came
 initScene = function() {
 
     if (detectMob) {
-        countMax = 25;
+        countMax = 5;
+        iterMin = 500;
+        iterMax = 600;
+        donutRange = 100;
+        baseColorOffset = 80;
+        isMobile = true;
     }
 
     renderer = new THREE.WebGLRenderer({
@@ -51,6 +56,11 @@ initScene = function() {
     camera.lookAt(scene.position);
     scene.add(camera);
 
+    // Add mobile controls
+    // if (isMobile) {
+    //   controls = new THREE.DeviceOrientationControls( camera );
+    // }
+
     // Light
     light = new THREE.DirectionalLight(0xfff3e4);
     light.position.set(40, 60, -15);
@@ -72,7 +82,7 @@ initScene = function() {
     var randomColors = new Array(3);
     var randomInvertedColors = new Array(3);
     for (var i = 0; i < randomColors.length; i++) {
-        randomColors[i] = parseInt(Math.random() * 150 + 25);
+        randomColors[i] = parseInt(Math.random() * 150 + baseColorOffset);
         randomInvertedColors[i] = 255 - randomColors[i];
     }
     var strColors = "rgb(" + randomColors.join(', ') + ")";
@@ -429,7 +439,7 @@ spawnChair = (function() {
 
         chair.position.y = 30;
 
-        var xzCoord = generateXZ(200);
+        var xzCoord = generateXZ(donutRange);
         chair.position.x = xzCoord[0];
         chair.position.z = xzCoord[1] - 50;
 
@@ -454,9 +464,17 @@ spawnChair = (function() {
     document.addEventListener('mousemove', mouseMove, false);
 
     render = function() {
-        camera.position.x += (mouseX - camera.position.x) * .05;
-        camera.position.y += (mouseY - camera.position.y + 80) * .05;
-        camera.lookAt(scene.position);
+
+        if (isMobile) {
+          // controls.update();
+          camera.position.x += (mouseX - camera.position.x) * .05;
+          camera.position.y += (mouseY - camera.position.y + 80) * .05;
+          camera.lookAt(scene.position);
+        } else {
+          camera.position.x += (mouseX - camera.position.x) * .05;
+          camera.position.y += (mouseY - camera.position.y + 80) * .05;
+          camera.lookAt(scene.position);
+        }
 
         // composer.render();
         requestAnimationFrame(render);
@@ -464,7 +482,7 @@ spawnChair = (function() {
     };
 
     return function() {
-        setTimeout(doSpawn, getRandomInt(15, 100));
+        setTimeout(doSpawn, getRandomInt(iterMin, iterMax));
     };
 })();
 
