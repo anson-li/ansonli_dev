@@ -776,7 +776,7 @@ li a {
   margin-top: 20px;
   text-align: center;
   font-size: 2em;
-}
+#}
 
 .menulink {
   text-align: center;
@@ -795,7 +795,7 @@ li a {
 * * * * * * */
 
 canvas {
-  z-index: -1;
+  z-index: -10;
   position: absolute;
   top: 0;
   left: 0;
