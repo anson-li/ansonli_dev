@@ -25,7 +25,16 @@
 
         scene = new THREE.Scene();
 
-        renderer = new THREE.CanvasRenderer( { alpha: true }); // gradient
+        renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true
+    });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.shadowMap.enabled = true;
+        renderer.autoClear = false;
+        renderer.shadowMap.type = THREE.PCFShadowMap;
+        renderer.shadowMapSoft = true;
+
         renderer.setPixelRatio( window.devicePixelRatio );
         renderer.setSize( window.innerWidth, window.innerHeight );
         container.appendChild( renderer.domElement );
@@ -33,17 +42,10 @@
         // particles
 
         var PI2 = Math.PI * 2;
-        var material = new THREE.SpriteCanvasMaterial( {
+        var material = new THREE.SpriteMaterial( {
 
-          color: 0xFFD7AB,
-          program: function ( context ) {
-
-            context.beginPath();
-            context.arc( 0, 0, 1.2, 0, PI2, true );
-            context.fill();
-
-          }
-
+          color: 0x999999,
+        
         } );
 
         geometry = new THREE.Geometry();
@@ -67,7 +69,7 @@
 
         // lines
 
-        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffffff, opacity: 1, linewidth: 0.5 } ) );
+        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffe5ce, opacity: 1, linewidth: 0.5 } ) );
         scene.add( line );
 
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );
