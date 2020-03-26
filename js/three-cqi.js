@@ -44,7 +44,7 @@
         var PI2 = Math.PI * 2;
         var material = new THREE.SpriteMaterial( {
 
-          color: 0x999999,
+          color: 0xFFB86F,
         
         } );
 
@@ -69,7 +69,7 @@
 
         // lines
 
-        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0xffe5ce, opacity: 1, linewidth: 0.5 } ) );
+        var line = new THREE.Line( geometry, new THREE.LineBasicMaterial( { color: 0x161616, opacity: 1, linewidth: 0.5 } ) );
         scene.add( line );
 
         document.addEventListener( 'mousemove', onDocumentMouseMove, false );

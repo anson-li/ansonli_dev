@@ -51,22 +51,23 @@
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 * 2.1 - Body / HTML formatting
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
-/*
-body, html {
+
+/* body, html {
   width: 100%;
   height: 100%;
-}
-*/
+} */
+
+
 body {
-  font-family: "Calibre";
-  font-weight: 300;
+  font-family: upgrade-lights, sans-serif;
+  font-weight: 100;
   font-size: 1em;
   text-align: left;
   letter-spacing: 1.5px;
   
-  background-color: #FFF;
+  background-color: #111;
   margin:0;
-  color: #333;
+  color: #fff;
 }
 
 .barba-container {
@@ -150,6 +151,10 @@ body {
 * 2.4 - Container Positioning Elements
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+#sub-text {
+  padding-top: 1em;
+}
+
 .fixed-wrapper {
   width: 100%;
   overflow-x: hidden;
@@ -161,13 +166,11 @@ body {
 }
 
 .top-center {
-  padding-top: 15px;
+  padding-top: 10px;
 }
 
 .mid-center {
-  top: 45%;
-  padding-top: 20%;
-  left: 35%;
+  top: 10%;
 }
 
 .left-top {
@@ -187,8 +190,13 @@ body {
 
 @media (min-width: 1024px) {
   .left-top {
-    padding-top: 10%;
-    left: 7%;
+    padding-top: 20%;
+    left: 5%;
+    width: 87%;
+  }
+  .mid-center {
+    padding-top: 20%;
+    left: 5%;
     width: 87%;
   }
 }
@@ -245,25 +253,26 @@ img {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 h1 {
-  font-family: 'Dala-Floda', serif;
+  font-family: ivymode, serif;
   font-size: 4.5em;
-  color: #333;
+  color: #fff;
+  font-weight: 400;
 }
 
 h2 {
-  font-family: 'Calibre-Bold', serif;
+  font-family: ivymode, serif;
   font-size: 5em;
   letter-spacing: 3px;
 }
 
 h3 {
-  font-family: 'Calibre-Bold', serif;
+  font-family: ivymode, serif;
   font-size: 3em;
   letter-spacing: 2px;
 }
 
 h4 {
-  font-family: 'Calibre-Bold', serif;
+  font-family: ivymode, serif;
   letter-spacing: 5px;
   font-size: 3em;
 }
@@ -274,20 +283,22 @@ h5 {
 }
 
 h6 {
-  font-family: 'Dala-Floda', serif;
+  font-family: ivymode, serif;
   letter-spacing: 5px;
   font-size: 3.5em;
 }
 
 h7 {
-  font-family: 'Calibre', serif;
-  letter-spacing: 4px;
+  font-family: upgrade-lights, serif;
+  letter-spacing: 3px;
   font-size: 1.5em;
 }
 
 p {
+  font-family: upgrade-lights, sans-serif;
+  font-weight: 100;
   text-align: left;
-  font-size: 1.4em;
+  font-size: 1.4em;  
 }
 
 
@@ -307,13 +318,13 @@ p {
 
 @media (min-width: 1500px) {
   h5 {
-    font-size: 1.3em;
+    font-size: 0.9em;
   }
   h7 {
     font-size: 1.1em;
   }
   p {
-    font-size: 1.1em;
+    font-size: 1em;
   }
 
 }
@@ -329,7 +340,8 @@ p {
 }
 
 .serif {
-  font-family: 'Tiempo', serif;
+  font-family: ivymode, serif;
+  font-weight: 200;
   letter-spacing: 2px;
 }
 
@@ -391,13 +403,13 @@ p {
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
 a {
-  color: #333;
+  color: #fff;
 }
 
 .color-bg {
   height: 100%;
   width: 100%;
-  background-color: #FEF8ED;
+  background-color: #111;
   z-index: -1000;
   position: fixed;
 }
@@ -412,12 +424,12 @@ a {
 
 a:hover, a:visited, a:link, a:active {
   text-decoration: none;
-  color: #333;
+  color: #fff;
 }
 
 .strikethrough {
-    display: inline-block;
-    position: relative;
+  display: inline-block;
+  position: relative;
 }
 
 .strikethrough:hover {
@@ -429,9 +441,9 @@ a:hover, a:visited, a:link, a:active {
     position: absolute;
     display: block;
     width: 0%;
-    height: 0.5px;
-    margin-top: -0.7em;
-    background: #444;
+    height: 3px;
+    margin-top: -0.65em;
+    background: rgba(255, 201, 155, 0.6);
     transform-origin: center left;
     transition: 0.25s ease;
     left: -0.5em;
@@ -456,12 +468,12 @@ a:hover, a:visited, a:link, a:active {
       position: absolute;
       display: block;
       width: 0%;
-      height: 10px;
-      margin-top: -0.7em;
+      height: 20px;
+      margin-top: -0.6em;
       background: rgba(255, 201, 155, 0.9);
       transform-origin: center left;
       transition: 0.25s ease;
-      left: -0.3em;
+      left: -0.1em;
   }
 
   .bigstrike:hover:after {
@@ -488,6 +500,9 @@ a:hover, a:visited, a:link, a:active {
   -webkit-transition: color ease 0.3s;
   -moz-transition: all ease 0.3s;
   transition: all ease 0.3s; 
+  font-size: 80%;
+  font-family: 'Calibre';
+  letter-spacing: 2px;
 }
 
 .download-img {
@@ -501,11 +516,10 @@ a:hover, a:visited, a:link, a:active {
   }
 }
 
-
 .btn:hover { 
   text-decoration: none;
-  color: #fff;
-  background: #333;
+  color: #000;
+  background: rgba(255, 201, 155, 0.9);
   padding: 0.9em 2.2em 0.5em 2.2em; 
 }
 
@@ -552,7 +566,7 @@ a:hover, a:visited, a:link, a:active {
 
 .box {
   border-radius: 3px;
-  box-shadow: 0px 2px 10px #ddd;
+  box-shadow: 0px 2px 10px #000;
   padding: 20px; 
   width: 200px;
   height: 50px; 
@@ -561,10 +575,14 @@ a:hover, a:visited, a:link, a:active {
   transition: all ease 0.3s;
 }
 
+.box p {
+  font-family: 'Calibre';
+}
+
 .box:hover {
   height: 50px;
   width: 210px;
-  box-shadow: 0px 2px 10px #888;
+  box-shadow: 0px 2px 10px #000;
 }
 
 .crossfade {
@@ -596,7 +614,7 @@ a:hover, a:visited, a:link, a:active {
 }
 
 ul {
-  background-color: #FFF;
+  background-color: #050505;
   list-style-type: none;
   margin: 0;
   padding-top: 20px;
@@ -614,6 +632,10 @@ li a {
 * 5.5 - Additional
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
 
+#main-text {
+  line-height: 130%;
+}
+
 @media (min-height: 1000px) {
   #main-text {
     padding-top: 10vh;
@@ -623,7 +645,7 @@ li a {
 @media (min-width: 1024px) {
   .highlight {
     position: relative;
-    display:inline-block;
+    display: inline-block;
   }
 
   .highlight:after {
@@ -632,8 +654,12 @@ li a {
     display: block;
     width: 105%;
     height: 15px;
-    margin-top: -0.7em;
-    background: rgba(255, 201, 155, 0.9);
+    margin-top: -0.4em;
+    background: rgba(255, 201, 155, 0.3);
+    -webkit-transform:
+            translateY(-20px)
+            translateX(-15px)
+            rotate(2deg); 
     transform-origin: center left;
     transition: 0.25s ease;
     z-index: -1;
@@ -732,7 +758,7 @@ li a {
 
 #top, #bottom, #left, #right {
     z-index: -1;
-    background: #FFFFFF;
+    background: #0c0c0c;
     position: fixed;
 }
 #left, #right {
@@ -776,10 +802,12 @@ li a {
   margin-top: 20px;
   text-align: center;
   font-size: 2em;
-#}
+  font-weight: 100px;
+}
 
 .menulink {
   text-align: center;
+  font-family: 'Calibre';
 }
 
 /* * * * * * *
