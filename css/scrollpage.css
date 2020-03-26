@@ -5,9 +5,13 @@
 * * * * * * * * * * * */
 
 html, body {
-  overflow: scroll;
+  overflow: auto;
   background-color: #000;
   color: #FFF;
+}
+
+.scroll-title {
+  padding-bottom: 0.5em;
 }
 
 .barba-container {
