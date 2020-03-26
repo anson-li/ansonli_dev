@@ -504,9 +504,9 @@ a:hover, a:visited, a:link, a:active {
   display: inline-block;
   text-align: center;
   cursor: pointer;
-  -webkit-transition: color ease 0.3s;
-  -moz-transition: all ease 0.3s;
-  transition: all ease 0.3s; 
+  -webkit-transition: color ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  transition: all ease 0.2s; 
   font-size: 80%;
   font-family: 'Calibre';
   letter-spacing: 2px;
@@ -533,6 +533,18 @@ a:hover, a:visited, a:link, a:active {
 .img-icon > .bottom, 
 .img-icon > .top {
   width: 30px;
+}
+
+.img-icon > .top {
+  z-index: -10;
+}
+
+.img-icon > .bottom {
+  opacity: 0;
+}
+
+.img-icon > .bottom:hover {
+  opacity: 100;
 }
 
 .item-two {
@@ -607,6 +619,10 @@ a:hover, a:visited, a:link, a:active {
 
 .crossfade img.top:hover {
   opacity:0;
+}
+
+.crossfade img.bottom:hover {
+  opacity:100;
 }
 
 /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
