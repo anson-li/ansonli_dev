@@ -6,8 +6,7 @@
 
 html, body {
   overflow: scroll;
-  /*background-color: #FEF8ED;*/
-  background-color: #111;
+  background-color: #000;
   color: #FFF;
 }
 

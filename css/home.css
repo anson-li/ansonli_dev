@@ -67,7 +67,7 @@ body {
   
   background-color: #111;
   margin:0;
-  color: #fff;
+  color: #000;
 }
 
 .barba-container {
@@ -153,6 +153,7 @@ body {
 
 #sub-text {
   padding-top: 1em;
+  font-weight: 400;
 }
 
 .fixed-wrapper {
@@ -299,6 +300,12 @@ p {
   font-weight: 100;
   text-align: left;
   font-size: 1.4em;  
+}
+
+@media (max-width: 768px) {
+  p {
+    font-weight: 400;
+  }
 }
 
 
@@ -974,8 +981,13 @@ animation: spin 1.5s linear infinite;
     top: 0;
     width: 51%;
     height: 100%;
-    background: #fff;
+    background: #151515;
     z-index: 1000;
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
 }
  
 #loader-wrapper .loader-section.section-left {

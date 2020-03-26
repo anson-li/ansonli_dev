@@ -7,15 +7,18 @@
       AMOUNTX = 10,
       AMOUNTY = 10,
 
-      camera, scene, renderer, geometry, particles;
+      camera, scene, renderer, geometry;
+
+      var particles = [];
+
+      var xDirection = true, yDirection = false;
 
       init();
       animate();
 
       function init() {
 
-        var container, separation = 100, amountX = 50, amountY = 50,
-        particles, particle;
+        var container, separation = 100, amountX = 50, amountY = 50, particle;
 
         container = document.createElement('div');
         document.body.appendChild(container);
@@ -26,9 +29,10 @@
         scene = new THREE.Scene();
 
         renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        alpha: true
-    });
+            antialias: true,
+            alpha: true
+        });
+
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.shadowMap.enabled = true;
         renderer.autoClear = false;
@@ -97,10 +101,8 @@
       //
 
       function onDocumentMouseMove(event) {
-
-        mouseX = event.clientX - windowHalfX;
-        mouseY = event.clientY - windowHalfY;
-
+        mouseX = (event.clientX - windowHalfX) / 2;
+        mouseY = (event.clientY - windowHalfY) / 2;
       }
 
       function onDocumentTouchStart( event ) {
@@ -132,7 +134,6 @@
 
       }
 
-      //
 
       function animate() {
       
@@ -142,9 +143,41 @@
       }
 
       function render() {
+
+        if (xDirection) {
+          if (mouseX >= 500) {
+            xDirection = false;
+          } else {
+            mouseX += 0.1;
+          }
+        } else {
+          if (mouseX < -500) {
+            xDirection = true;
+          } else {
+            mouseX -= 0.1;
+          }
+        }
+
+        if (yDirection) {
+          if (mouseY >= 400) {
+            yDirection = false;
+          } else {
+            mouseY += 0.1;
+          }
+        } else {
+          if (mouseY <= -400) {
+            yDirection = true;
+          } else {
+            mouseY -= 0.1;
+          }
+        }
+
         camera.position.x += ( mouseX - camera.position.x ) * .015;
         camera.position.y += ( - mouseY - camera.position.y ) * .015;
         camera.lookAt( scene.position );
+        camera.rotation.x += 5 * Math.PI / 180;
+        camera.rotation.y += 5 * Math.PI / 180;
+
         renderer.render( scene, camera );
 
       }
