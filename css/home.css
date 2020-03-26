@@ -109,7 +109,16 @@ body {
 
 @media (min-width: 1024px) {
   .spacer-xs {
-     height: 5em;
+     height: 3em;
+  }
+  .spacer-sm {
+    height: 10em;
+  }
+}
+
+@media (min-width: 1500px) {
+  .spacer-xs {
+     height: 3em;
   }
   .spacer-sm {
     height: 10em;
@@ -130,10 +139,11 @@ body {
 .fixed-bottom {
   position: fixed;
   padding-bottom: 45px;
-  margin-bottom: 0px..45;
+  margin-bottom: 0px;
   bottom: 0px;
   left: 60px;
   width: 90%;
+  color: white;
 }
 
 .horizontal {
@@ -297,9 +307,10 @@ h7 {
 
 p {
   font-family: upgrade-lights, sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   text-align: left;
-  font-size: 1.4em;  
+  font-size: 1.4em;
+  line-height: 1.7;  
 }
 
 @media (max-width: 768px) {
@@ -321,6 +332,15 @@ p {
     font-size: 5em;
     letter-spacing: 3px;
   }
+  h5 {
+    font-size: 1.2rem;
+  }
+  h7 {
+    font-size: 1.2rem;
+  }
+  p {
+    font-size: 1.2rem;
+  }
 }
 
 @media (min-width: 1500px) {
@@ -332,6 +352,7 @@ p {
   }
   p {
     font-size: 1em;
+    font-weight: 100;
   }
 
 }
@@ -510,6 +531,18 @@ a:hover, a:visited, a:link, a:active {
   font-size: 80%;
   font-family: 'Calibre';
   letter-spacing: 2px;
+}
+
+@media (min-width: 1024px) {
+  .btn {
+    font-size: 100%;
+  }
+}
+
+@media (min-width: 1500px) {
+  .btn {
+    font-size: 80%;
+  }
 }
 
 .download-img {
